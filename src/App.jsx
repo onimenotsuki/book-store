@@ -1,13 +1,26 @@
 import React from 'react';
 
+/* Componentes */
+import Header from './Shared/Components/Header';
+import Footer from './Shared/Components/Footer';
+
+/* Estilos */
+import '@material/layout-grid/dist/mdc.layout-grid.min.css';
+import '@material/icon-button/dist/mdc.icon-button.min.css';
+
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
+  <div>
+    <Header />
+
+    <div className="mdc-layout-grid">
+      <div className="mdc-layout-grid__inner">
+        <div className="mdc-layout-grid__cell">
+          Amet justo donec enim diam!
+        </div>
+      </div>
+    </div>
+
+    <Footer />
   </div>
 );
 
