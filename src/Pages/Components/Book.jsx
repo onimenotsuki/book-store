@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Book = (props) => (
-    <div className="mdc-layout-grid__cell">
+    <div
+        key={props.id}
+        className="mdc-layout-grid__cell"
+    >
         <h1>
             {props.title}
         </h1>
