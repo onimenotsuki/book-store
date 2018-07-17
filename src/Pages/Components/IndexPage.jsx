@@ -1,14 +1,12 @@
 import React from 'react';
 
+import BookList from './BookList'; 
+
 const IndexPage = () => (
   <div
     className="mdc-layout-grid"
   >
-    <div className="mdc-layout-grid__inner">
-      <div className="mdc-layout-grid__cell">
-        Amet justo donec enim diam!
-      </div>
-    </div>
+    <BookList />
   </div>
 );
 
