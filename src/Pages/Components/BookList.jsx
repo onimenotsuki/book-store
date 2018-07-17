@@ -7,7 +7,7 @@ const books = [
     {
         title: "El Conde de Montecristo",
         author: "Alejandro Dumás",
-        existences: 10,
+        existences: 0,
         description: "El conde de Montecristo (en francés, Le comte de Monte-Cristo) es una novela de aventuras clásica de Alexandre Dumas (padre) y Auguste Maquet. Este último no figuró en los títulos de la obra ya que Alexandre Dumas pagó una elevada suma de dinero para que así fuera. Maquet era un colaborador muy activo en las novelas de Dumas, llegó a escribir obras enteras que Dumas reescribió más tarde. Esta obra se suele considerar como el mejor trabajo de Dumas, y a menudo se incluye en las listas de las mejores novelas de todos los tiempos. El libro se terminó de escribir en 1844, y fue publicado en una serie de 18 entregas, como folletín, durante los dos años siguientes.",
     }, {
         title: "La metamorfosis",
@@ -35,7 +35,7 @@ const BookList = () => (
        <Book
             title={books[1].title}
             author={books[1].author}
-            existences={books[0].existences}
+            existences={books[1].existences}
         >
             {books[1].description}
         </Book>
