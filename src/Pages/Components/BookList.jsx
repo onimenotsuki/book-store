@@ -37,10 +37,21 @@ const BookList = () => (
         <div>Estamos en Book List</div>
         
         {books.map((book, index) => {
+            if (index === 0) {
+                return (
+                    <LastBook 
+                        title={book.title}
+                        key={index}
+                        author={book.author}
+                        description={book.description}
+                    />    
+                );
+            }
+            
             return (
                 <Book 
                     title={book.title}
-                    id={index}
+                    key={index}
                     position={index}
                     author={book.author}
                     description={book.description}
