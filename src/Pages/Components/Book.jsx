@@ -5,8 +5,11 @@ import '@material/card/dist/mdc.card.min.css';
 const Book = (props) => (
     <div
         key={props.id}
-        className="mdc-layout-grid__cell"
-        position={props.position}
+        className={ 
+            props.position === 0 ? 
+            'mdc-layout-grid__cell mdc-layout-grid__cell--span-12' :
+            'mdc-layout-grid__cell'    
+        }
     >
         <div className="mdc-card">
             <div className="mdc-card__media mdc-card__media--square">
