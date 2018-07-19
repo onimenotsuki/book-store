@@ -2,9 +2,11 @@ import React from 'react';
 
 import '@material/card/dist/mdc.card.min.css';
 
+// Componentes
+import Ranking from './Ranking';
+
 const Book = (props) => (
     <div
-        key={props.id}
         className={ 
             props.position === 0 ? 
             'mdc-layout-grid__cell mdc-layout-grid__cell--span-12' :
@@ -29,6 +31,8 @@ const Book = (props) => (
                     <p className="description">
                         {props.description || props.children}
                     </p>
+
+                    <Ranking />
                 </div>
             </div>
         </div>
