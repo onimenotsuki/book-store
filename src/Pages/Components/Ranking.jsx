@@ -13,21 +13,21 @@ class Ranking extends Component {
     }
 
     toggleRanking(action) {
-        if (action === 'add' && this.state.ranking < 5) {
+        if (action === 'add' && this.state.ranking < 10) {
             this.setState({
                 ranking: this.state.ranking + 1,
             });
         } else if (action === 'remove' && this.state.ranking > 0) {
-                this.setState({
-                    ranking: this.state.ranking - 1,
-                });
+            this.setState({
+                ranking: this.state.ranking - 1,
+            });
         }
     }
 
     // Por el momento ninguna de estas funciones se está utilizando
     // esta función suma al ranking y se puede utilizar sin argumentos
     addRanking() {
-        if (this.state.ranking < 5) {
+        if (this.state.ranking < 10) {
             this.setState({
                 ranking: this.state.ranking + 1,
             });
