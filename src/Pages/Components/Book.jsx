@@ -13,10 +13,10 @@ const Book = (props) => (
       'mdc-layout-grid__cell'
     }
   >
-    <div className="mdc-card">
-      <div className="mdc-card__media mdc-card__media--square">
+    <div className="mdc-card book-card">
+      <div className="mdc-card__media">
         <div className="mdc-card__media-content">
-          <h1>
+          <h1 className="title">
             {props.title}
           </h1>
 
