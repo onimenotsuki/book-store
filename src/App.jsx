@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 /* Componentes */
 import Header from './Shared/Components/Header';
@@ -10,11 +11,13 @@ import '@material/layout-grid/dist/mdc.layout-grid.min.css';
 import '@material/icon-button/dist/mdc.icon-button.min.css';
 
 const App = () => (
-  <div>
-    <Header />
-    <IndexPage />
-    <Footer />
-  </div>
+  <Router>
+    <div>
+      <Header />
+      <Route path="/" component={IndexPage} />
+      <Footer />
+    </div>
+  </Router>
 );
 
 export default App;
