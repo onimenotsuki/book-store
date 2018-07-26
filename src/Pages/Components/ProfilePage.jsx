@@ -26,7 +26,7 @@ class ProfilePage extends Component {
     return (
       <div className="mdc-layout-grid">
         <div className="mdc-card" style={{ marginTop: 80, padding: 20 }}>
-          Tel: {this.state.user.phone}
+          Tel: {this.state.user.phone || 'numero      '}
           Email: {this.state.user.email}
         </div>
       </div>
