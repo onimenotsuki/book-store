@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './Shared/Components/Header';
 import Footer from './Shared/Components/Footer';
 import IndexPage from './Pages/Components/IndexPage';
+import ProfilePage from './Pages/Components/ProfilePage';
 
 /* Estilos */
 import '@material/layout-grid/dist/mdc.layout-grid.min.css';
@@ -14,7 +15,8 @@ const App = () => (
   <Router>
     <div>
       <Header />
-      <Route path="/" component={IndexPage} />
+      <Route exact path="/" component={IndexPage} />
+      <Route path="/perfil" component={ProfilePage} />
       <Footer />
     </div>
   </Router>

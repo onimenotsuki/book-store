@@ -14,6 +14,10 @@ const Header = () => (
         <Link to="/">
           <span className="mdc-top-app-bar__title">BookStore</span>
         </Link>
+
+        <Link to="/perfil">
+          <span>Autor</span>
+        </Link>
       </section>
     </div>
   </header>
