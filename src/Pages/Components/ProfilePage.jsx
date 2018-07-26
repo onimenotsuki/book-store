@@ -7,27 +7,27 @@ class ProfilePage extends Component {
 
     this.state = {
       user: {},
+      isLoading: false,
     };
   }
 
-  async componentDidMount() {
-    const response = await axios.get('https://randomuser.me/api/');
+  componentDidMount() {
+    this.setState({ isLoading: true });
 
-    console.log(response.data.results);
-
-    this.setState({
-      user: response.data.results[0],
-    });
+    axios.get('https://jsonplaceholder.typicode.com/users/1')
+      .then(response => {
+        this.setState({
+          user: response.data,
+          isLoading: false,
+        });
+      });
   }
 
   render() {
-    console.log(this.state.user);
-
     return (
       <div className="mdc-layout-grid">
         <div className="mdc-card" style={{ marginTop: 80, padding: 20 }}>
-          Tel: {this.state.user.phone || 'numero      '}
-          Email: {this.state.user.email}
+          <h1>{this.state.isLoading ? 'Cargando...' : this.state.user.name}</h1>
         </div>
       </div>
     );
