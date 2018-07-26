@@ -16,7 +16,7 @@ const App = () => (
     <div>
       <Header />
       <Route exact path="/" component={IndexPage} />
-      <Route path="/perfil" component={ProfilePage} />
+      <Route path="/usuarios/:id" component={ProfilePage} />
       <Footer />
     </div>
   </Router>
