@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class ProfilePage extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       user: {},
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const response = await axios.get('https://randomuser.me/api/');
+
+    console.log(response.data.results);
+
     this.setState({
-      user: {
-        name: "Roberto Nuñez",
-        age: 45,
-        title: "Senior",
-      },
+      user: response.data.results[0],
     });
   }
 
@@ -25,7 +26,8 @@ class ProfilePage extends Component {
     return (
       <div className="mdc-layout-grid">
         <div className="mdc-card" style={{ marginTop: 80, padding: 20 }}>
-          <h2>{this.state.user.name}</h2>
+          Tel: {this.state.user.phone}
+          Email: {this.state.user.email}
         </div>
       </div>
     );
