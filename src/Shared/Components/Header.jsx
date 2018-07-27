@@ -14,10 +14,6 @@ const Header = () => (
         <Link to="/">
           <span className="mdc-top-app-bar__title">BookStore</span>
         </Link>
-
-        <Link to="/usuarios/5">
-          <span>Autor</span>
-        </Link>
       </section>
     </div>
   </header>

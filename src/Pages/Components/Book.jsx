@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import '@material/card/dist/mdc.card.min.css';
@@ -40,7 +41,7 @@ class Book extends Component {
             </p>
 
             <p className="author">
-              {this.state.author.name}
+              <Link to={`/usuarios/${this.props.authorId}`}>{this.state.author.name}</Link>
             </p>
 
             <p className="description">
