@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import ReactHtmlParser from 'react-html-parser'
 
 import '@material/card/dist/mdc.card.min.css';
 
@@ -45,7 +46,7 @@ class Book extends Component {
             </p>
 
             <p className="description">
-              {this.props.description || this.props.children}
+              {!this.props.description ? ReactHtmlParser(this.props.children) : ReactHtmlParser(this.props.description)}
             </p>
 
             <Ranking />

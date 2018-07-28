@@ -28,7 +28,7 @@ class GoogleBook extends Component {
       <Book
         title={this.state.book.title}
         id={this.state.book.pageCount}
-        description={this.state.book.subtitle}
+        description={this.state.book.description}
       />
     );
   }
