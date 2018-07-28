@@ -31,15 +31,17 @@ class BookPage extends Component {
     const { params } = this.props.match;
 
     return (
-      <div className="mdc-layout-grid__inner">
-        <Book
-          title={this.state.books[params.id].title}
-          id={params.id}
-          key={params.id}
-          position={params.id}
-          authorId={this.state.books[params.id].authorId}
-          description={this.state.books[params.id].description}
-        />
+      <div className="mdc-layout-grid">
+        <div className="mdc-layout-grid__inner">
+          <Book
+            title={this.state.books[params.id].title}
+            id={params.id}
+            key={params.id}
+            position={params.id}
+            authorId={this.state.books[params.id].authorId}
+            description={this.state.books[params.id].description}
+          />
+        </div>
       </div>
     );
   }
