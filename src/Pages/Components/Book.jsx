@@ -33,7 +33,7 @@ class Book extends Component {
         >
           <div className="mdc-card__media">
             <h1 className="title">
-              {this.props.title}
+              <Link to={`/books/${this.props.id}`}>{this.props.title}</Link>
             </h1>
 
             <p className={this.props.existences === 0 ? 'no-existences' : 'existences'}>

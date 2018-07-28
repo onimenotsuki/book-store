@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
+/* Componentes */
 import Book from './Book';
 
-class BookList extends Component {
+class BookPage extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,27 +24,25 @@ class BookList extends Component {
           description: 'Mattis Tincidunt, et eget, nec purus, Fusce.  convallis sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed diam.',
         },
       ],
-    };
+    }
   }
 
   render() {
+    const { params } = this.props.match;
+
     return (
       <div className="mdc-layout-grid__inner">
-        {this.state.books.map((book, index) => {
-           return (
-             <Book
-               id={index}
-               title={book.title}
-               key={index}
-               position={index}
-               authorId={book.authorId}
-               description={book.description}
-             />
-           );
-        })}
+        <Book
+          title={this.state.books[params.id].title}
+          id={params.id}
+          key={params.id}
+          position={params.id}
+          authorId={this.state.books[params.id].authorId}
+          description={this.state.books[params.id].description}
+        />
       </div>
     );
   }
 }
 
-export default BookList;
+export default BookPage;

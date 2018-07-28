@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './Shared/Components/Header';
 import Footer from './Shared/Components/Footer';
 import IndexPage from './Pages/Components/IndexPage';
+import BookPage from './Pages/Components/BookPage';
 import ProfilePage from './Pages/Components/ProfilePage';
 
 /* Estilos */
@@ -17,6 +18,7 @@ const App = () => (
       <Header />
       <Route exact path="/" component={IndexPage} />
       <Route path="/usuarios/:id" component={ProfilePage} />
+      <Route path="/books/:id" component={BookPage} />
       <Footer />
     </div>
   </Router>
