@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 /* Componentes */
 import Book from './Book';
@@ -7,39 +8,32 @@ class BookPage extends Component {
   constructor() {
     super();
     this.state = {
-      books: [
-        {
-          title: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-          authorId: 1,
-          description: 'Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed diam.',
-        },
-        {
-          title: 'Lorem adipiscing elit.',
-          authorId: 5,
-          description: 'Tincidunt et, mattis eget, convallis nec, purus.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed diam.',
-        },
-        {
-          title: 'Adipiscing lorem elit.',
-          authorId: 10,
-          description: 'Mattis Tincidunt, et eget, nec purus, Fusce.  convallis sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed diam.',
-        },
-      ],
+      book: {}
     }
   }
 
-  render() {
-    const { params } = this.props.match;
+  componentDidMount() {
+    axios.get(`https://www.googleapis.com/books/v1/volumes/${this.props.match.params.id}`)
+      .then(response => {
+        console.log(response);
+        this.setState({
+          book: response.data.volumeInfo,
+          id: response.data.id,
+        });
+      });
+  }
 
+  render() {
     return (
       <div className="mdc-layout-grid">
         <div className="mdc-layout-grid__inner">
           <Book
-            title={this.state.books[params.id].title}
-            id={params.id}
-            key={params.id}
-            position={params.id}
-            authorId={this.state.books[params.id].authorId}
-            description={this.state.books[params.id].description}
+            title={this.state.book.title}
+            id={this.state.id}
+            key={'asndasdkjaslkdjasd'}
+            position={1}
+            authorId={1}
+            description={'askdlajsldkjaskldj'}
           />
         </div>
       </div>
