@@ -14,7 +14,6 @@ class Book extends Component {
 
   render() {
     return (
-      <div className="mdc-layout-grid__cell">
         <div
           className="mdc-card book-card"
           style={{ marginTop: 80, padding: 20 }}
@@ -41,7 +40,6 @@ class Book extends Component {
             <Ranking />
           </div>
         </div>
-      </div>
     );
   }
 }

@@ -8,7 +8,6 @@ const IndexPage = () => (
   <div
     className="mdc-layout-grid"
   >
-    <GoogleBook />
     <BookList />
   </div>
 );
