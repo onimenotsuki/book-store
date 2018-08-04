@@ -8,7 +8,9 @@ class BookPage extends Component {
   constructor() {
     super();
     this.state = {
-      book: {}
+      book: {},
+      id: null,
+      authors: [],
     }
   }
 
@@ -19,6 +21,7 @@ class BookPage extends Component {
         this.setState({
           book: response.data.volumeInfo,
           id: response.data.id,
+          authors: response.data.volumeInfo.authors,
         });
       });
   }
@@ -26,16 +29,13 @@ class BookPage extends Component {
   render() {
     return (
       <div className="mdc-layout-grid">
-        <div className="mdc-layout-grid__inner">
-          <Book
-            title={this.state.book.title}
-            id={this.state.id}
-            key={'asndasdkjaslkdjasd'}
-            position={1}
-            authorId={1}
-            description={'askdlajsldkjaskldj'}
-          />
-        </div>
+        <Book
+          title={this.state.book.title}
+          id={this.state.id}
+          key={this.state.id}
+          author={this.state.authors}
+          description={this.state.book.description}
+        />
       </div>
     );
   }

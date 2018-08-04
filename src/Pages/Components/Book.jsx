@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser'
 
 import '@material/card/dist/mdc.card.min.css';
@@ -11,18 +10,6 @@ import Ranking from './Ranking';
 class Book extends Component {
   constructor() {
     super();
-    this.state = {
-      author: {}
-    };
-  }
-
-  componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/users/' + this.props.authorId)
-      .then(response => {
-        this.setState({
-          author: response.data,
-        });
-      });
   }
 
   render() {
@@ -42,7 +29,9 @@ class Book extends Component {
             </p>
 
             <p className="author">
-              <Link to={`/usuarios/${this.props.authorId}`}>{this.state.author.name}</Link>
+              <strong>
+                <em>{this.props.author}</em>
+              </strong>
             </p>
 
             <p className="description">
