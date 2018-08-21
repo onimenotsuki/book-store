@@ -1,14 +1,19 @@
-const prevState = require('./schema.json');
-const book = [{
-  name: "Donec vitae dolor.",
-  description: "Cum sociis natoque penatibus et magnis dis parturient.",
-}];
+const getBook = require('./actions/getBook');
 
 // Aprendiendo a modificar objetos en javascript
-const reducer = (state = book, { type }) => {
+const reducer = (state = {}, { type, payload }) => {
   switch(type) {
   case 'ADD_BOOK':
-    return [book, {...state}];
+    return {
+      books: [
+        ...state.books,
+      ],
+    };
+    // store.getState()
+    // case 'GET_BOOKS':
+    /* TODO: Corregir action para manejar promesas asincronas */
+    case 'GET_BOOK':
+      return getBook(payload);
   default:
     return state;
   }
@@ -27,4 +32,17 @@ const reducer = (state = book, { type }) => {
 //   return state;
 // }
 
-console.log(reducer({book: { name: "sdsad", description: "adasdas" }}, { type: 'ADD_BOOK' }));
+console.log(reducer({ books: [
+  { book: {
+    id: '12312asdas',
+    title: 'Donec hendrerit tempor tellus.',
+    description: 'Sed id ligula quis est convallis tempor.  Praesent augue.'
+  } }
+] }, { type: 'ADD_BOOK' }));
+
+console.log(reducer(
+  {},
+  {
+    type: 'GET_BOOK', payload: { bookId: 'bJEfjl2INGMC' }
+  }
+));
