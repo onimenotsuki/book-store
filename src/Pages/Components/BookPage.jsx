@@ -23,9 +23,6 @@ class BookPage extends Component {
           id: response.data.id,
           authors: response.data.volumeInfo.authors,
         });
-
-        localStorage.setItem('bookId', response.data.id);
-        localStorage.setItem('counter:' + response.data.id , 1);
       });
   }
 
